@@ -1,0 +1,11 @@
+#if(item.platform=="iOS"):
+<!-- iOS download   href="itms-services://?action=download-manifest&url=#(item.xml)" -->
+<a type="button" onclick='installiOSWithId("#(item.id)")'>
+    <button class="button button-i">Install</button>
+</a>
+#else:
+<!-- such as Android download -->
+<a type="button " href="/download/#(item.id)/#(item.fileName)">
+    <button class="button button-a">Download</button>
+</a>
+#endif

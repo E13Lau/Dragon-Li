@@ -1,0 +1,6 @@
+#extend("index"):
+#export("body"):
+    <p>IMEI: #(imei)</p>
+    <h1>UDID: #(udid)</h1>
+#endexport
+#endextend

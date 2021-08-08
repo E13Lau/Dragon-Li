@@ -1,0 +1,11 @@
+#if(item.platform=="iOS"):
+<!-- iOS download -->
+<a type="button" onclick='installiOSWithId("#(item.id)")'>
+    <button class="button buttonSmall button-i">Install</button>
+</a>
+#else:
+<!-- such as Android download -->
+<a type="button" style="z-index: 99;" href="/download/#(item.id)/#(item.fileName)">
+    <button class="button buttonSmall button-a">Download</button>
+</a>
+#endif

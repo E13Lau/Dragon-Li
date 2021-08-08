@@ -1,0 +1,40 @@
+<div id="main-cell">
+    <div class="centerFlex">
+        <a type="button" class="centerFlex" id="main-cell-a" href="/detail?p=#(item.platform)&b=#(item.bundleID)">
+            <div>
+                <h1 style="margin: 0px 0px;">#(item.packageName)</h1>
+                <div style="margin: 10px 0px">
+                    <p style="display: inline;">#(item.description)</p>
+                </div>
+                <div class="tag-container" style="margin: 0px;word-break:break-word;">
+                    #if(item.platform=="iOS"):
+                    <b class="tag tag-i">#(item.platform)</b>
+                    #else:
+                    <b class="tag tag-a">#(item.platform)</b>
+                    #endif
+                    <b class="tag">#(item.version)</b>
+                    <b class="tag">#(item.build)</b>
+                    <b class="tag">#(item.bundleID)</b>
+                </div>
+            </div>
+            #extend("component/downloadButton")
+        </a>
+    </div>
+    
+    <div style="display: flex;justify-content: flex-start;align-items: baseline;">
+        <p class="time-label" style="margin: 0px;font-size: 14px;flex: 1;">#date(item.createdDate, "yyyy-MM-dd HH:mm:ss")</p>
+        #if(isDetail==true):
+        <div style="padding-right: 10px;">
+            #if(item.platform=="iOS"):
+            #if(item.dsym!=null):
+            <a style="font-size:13px;text-decoration:underline;" href="/download/#(item.id)/#(item.dsym)"
+                download="#(item.dsym)">dSYM</a> ｜
+            #endif
+            #endif
+            <a style="font-size:13px;text-decoration:underline;" href="javascript:void;"
+                onclick='javascript:deletePkg("#(item.id)");'>Delete</a>｜
+            <a style="font-size:13px;text-decoration:underline;" href="/test-report/#(item.id)" target="_blank">Report</a>
+        </div>
+        #endif
+    </div>
+</div>

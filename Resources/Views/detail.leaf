@@ -1,0 +1,18 @@
+#extend("index"):
+#export("body"):
+<div>
+    <div>
+        #extend("component/mainCell")
+    </div>
+
+    <hr >
+    <h2 style="margin: 0px;margin-left: 10px;padding: 0px;">Version History</h2>
+    <ul style="margin-left: 20px;">
+        #for(item in items):
+            #extend("component/detailCell")
+            <hr style="margin-left: 10px;">
+        #endfor
+    </ul>
+</div>
+#endexport
+#endextend

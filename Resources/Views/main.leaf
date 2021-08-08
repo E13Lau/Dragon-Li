@@ -1,0 +1,10 @@
+#extend("index"):
+#export("body"):
+<div>
+    #for(item in items):
+        #extend("component/mainCell")
+        <hr style="margin-left: 50px;">
+    #endfor
+</div>
+#endexport
+#endextend

@@ -1,0 +1,7 @@
+#extend("index"):
+    #export("body"):
+        <div class="text-center" style="display: grid;align-content: center;text-align: center;">
+        <h1 style="font-size:200%;">404</h1>
+        </div>
+    #endexport
+#endextend

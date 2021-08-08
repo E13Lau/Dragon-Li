@@ -1,0 +1,24 @@
+<li>
+    <div class="" style="margin: 0px 10px;display: flex;align-items: center;justify-content: center;padding: 0px">
+        <div style="flex: 1;display: flex;align-items: center;">
+            <div style="margin: 5px;">
+                <p>#(item.description)</p>
+                <sup>#(item.version)</sup>
+                <sup>#(item.build)</sup>
+                <p class="time-label" style="margin: 0px;font-size:14px;">#date(item.createdDate, "yyyy-MM-dd HH:mm:ss")</p>
+            </div>
+        </div>
+        <div style="flex-direction:column;display: flex;align-items: flex-end;">
+            #extend("component/smallDownloadButton")
+            <div style="margin-right: 10px;">
+                #if(item.platform=="iOS"):
+                    #if(item.dsym!=null):
+                        <a style="font-size:13px;text-decoration:underline;" href="/download/#(item.id)/#(item.dsym)" download="#(item.dsym)">dSYM</a>｜
+                    #endif
+                #endif
+                <a style="font-size:13px;text-decoration:underline;" href="javascript:void;" onclick='javascript:deletePkg("#(item.id)");'>Delete</a>｜
+                <a style="font-size:13px;text-decoration:underline;" href="/test-report/#(item.id)" target="_blank">Report</a>
+            </div>
+        </div>
+    </div>
+</li>

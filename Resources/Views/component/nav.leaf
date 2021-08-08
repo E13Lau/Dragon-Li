@@ -1,0 +1,26 @@
+<nav>
+    <ul>
+        <li>
+            <a href="/">
+                Home
+            </a>
+        </li>
+        #if(item.bundleID!=null):
+        <li>
+            <a style="max-width: 180px;" href="#">
+                #(item.bundleID)
+            </a>
+        </li>
+        #endif
+        <li style="float:right">
+            <a href="/mobileconfig/udid.mobileconfig" download="udid.mobileconfig">
+                UDID
+            </a>
+        </li>
+        <li style="float:right">
+            <a href="/rootca" download="rootCA_cert.pem">
+                CA
+            </a>
+        </li>
+    </ul>
+</nav>
