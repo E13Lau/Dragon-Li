@@ -35,13 +35,13 @@ Content-Length: 22
 因为 iOS 安装网络必须 HTTPS，所以局域网这里会使用 mDNS 来部署一个包含域名的服务器。
 macOS 包含 Bonjour 服务使得这个过程相对容易一些，所以这里以 macOS 说明。
 
-1, macOS 下，打开 设置.app ，打开共享菜单，你可以看到以 .local 结尾的域名，下面以`xx.local`代替。
-2, 使用 OpenSSL 创建自签名根证书，命名为 rootCA_cert.pem。
-3, 使用根证书签发 `xx.local` 域名的域证书。
-4, 将根证书、域证书放到 certs 文件夹下。
-5, 修改 ./config/web.conf 中 server_name 字段为 `xx.local`。
-6, 使用指令 `docker-compose up --build -d` 运行容器。
-7, 同一局域网下访问`xx.local`打开页面。
+1. macOS 下，打开 设置.app ，打开共享菜单，你可以看到以 .local 结尾的域名，下面以`xx.local`代替。
+2. 使用 OpenSSL 创建自签名根证书，命名为 rootCA_cert.pem。
+3. 使用根证书签发 `xx.local` 域名的域证书。
+4. 将根证书、域证书放到 certs 文件夹下。
+5. 修改 ./config/web.conf 中 server_name 字段为 `xx.local`。
+6. 使用指令 `docker-compose up --build -d` 运行容器。
+7. 同一局域网下访问`xx.local`打开页面。
 
 ### 广域网部署
 
