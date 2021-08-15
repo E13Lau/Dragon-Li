@@ -3,16 +3,17 @@
 ## 这是什么？
 
 这是一个 IPA 包和 APK 包托管的服务，包含 CA 证书下载，iPhone设备UDID获取等服务。
-使用 Vapor 框架开发，Docker 部署，SQLite 作为数据库服务。
+
+使用 [Vapor](https://vapor.codes/) 框架开发，Docker 部署，SQLite 作为数据库服务。
 
 ``` upload接口
 POST /upload HTTP/1.1
 Host: imac.local:14145
 File-Name: example.ipa
-Package-Name: QQ
+Package-Name: ExampleApp
 Package-Version: 1.1.5
 Package-BuildNumber: 114
-Package-BundleID: com.apple.qq.com.apple.qq.com.apple.qq.com.apple.qq
+Package-BundleID: com.example.app
 Content-Type: application/octet-stream
 Content-Length: 22
 
